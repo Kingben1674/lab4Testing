@@ -1,3 +1,9 @@
+
+window.onload = pageLoad;
+function pageLoad() {
+    
+}
+
 const settings = {
     "async": true,
     "crossDomain": true,
