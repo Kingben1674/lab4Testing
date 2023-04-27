@@ -10,7 +10,7 @@ const settings = {
     "url": "https://coronavirus-smartable.p.rapidapi.com/stats/v1/US/",
     "method": "GET",
     "headers": {
-      "x-rapidapi-key": "xe8b338f219msh590d67a44b8fd39p1cc21ejsnce460ec2e198",
+      "x-rapidapi-key": "e8b338f219msh590d67a44b8fd39p1cc21ejsnce460ec2e198",
       "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com"
     }
   };
