@@ -15,7 +15,7 @@ const settings = {
     }
   };
   
-  $.ajax(settings).done(function (response) {
+  jQuery.ajax(settings).done(function (response) {
     const stats = response.stats;
     const totalConfirmedCases = stats.totalConfirmedCases;
     const totalDeaths = stats.totalDeaths;
