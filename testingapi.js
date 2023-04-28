@@ -4,24 +4,10 @@ function pageLoad() {
     
 }
 
-const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://coronavirus-smartable.p.rapidapi.com/stats/v1/US/",
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-key": "e8b338f219msh590d67a44b8fd39p1cc21ejsnce460ec2e198",
-      "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com"
-    }
-  };
-  
-  jQuery.ajax(settings).done(function (response) {
-    const stats = response.stats;
-    const totalConfirmedCases = stats.totalConfirmedCases;
-    const totalDeaths = stats.totalDeaths;
-    const totalRecoveredCases = stats.totalRecoveredCases;
-    console.log(`Total confirmed cases: ${totalConfirmedCases}`);
-    console.log(`Total deaths: ${totalDeaths}`);
-    console.log(`Total recovered cases: ${totalRecoveredCases}`);
-  });
-  
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
