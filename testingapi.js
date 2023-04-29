@@ -2,7 +2,7 @@
 window.onload = pageLoad;
 function pageLoad() {
   if(sessionStorage.getItem('isLoggedIn') == 'true'){
-    
+    document.getElementById('nameInfo')=showName;
   }  
 
 }
