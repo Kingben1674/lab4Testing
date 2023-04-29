@@ -29,10 +29,26 @@
         <a href="Secondpage.html">Click here</a>
     </p>
 
-   <h1>COVID-19 API Example</h1>
-    <button id="btn">Get Global COVID-19 Totals</button>
-    <pre id="result"></pre>
+    <h1>Get Weather</h1>
+    <button onclick="getWeather()">Get Weather</button>
+    <p id="weather"></p>
 
+    <script>
+      function getWeather() {
+        // replace YOUR_API_KEY with your actual API key
+        const apiKey = 'kGNyWQ9e1ASq0BGTVXtrqHcEpRaRIAcW';
+        const locationKey = '2089870'; // replace LOCATION_KEY with the actual location key
+        const url = `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`;
+
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            const weatherText = `${data[0].WeatherText}. Temperature is ${data[0].Temperature.Imperial.Value}°F (${data[0].Temperature.Metric.Value}°C).`;
+            document.getElementById('weather').textContent = weatherText;
+          })
+          .catch(error => console.error(error));
+      }
+    </script>
     <button type="button" id="redirectButton">Click me</button>
 
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
