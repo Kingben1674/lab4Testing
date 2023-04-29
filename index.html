@@ -11,16 +11,16 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        $(document).ready(function() {
-          $("#btn").click(function() {
-            var url = "https://disease.sh/v3/covid-19/all";
-            $.get(url, function(data) {
-              $("#result").text(JSON.stringify(data, null, 2));
+        document.addEventListener("DOMContentLoaded", function () {
+            $(document).ready(function () {
+                $("#btn").click(function () {
+                    var url = "https://disease.sh/v3/covid-19/all";
+                    $.get(url, function (data) {
+                        $("#result").text(JSON.stringify(data, null, 2));
+                    });
+                });
             });
-          });
         });
-      });
     </script>
 
 </head>
@@ -36,24 +36,26 @@
     <p id="weather"></p>
 
     <script>
-      function getWeather() {
-        // replace YOUR_API_KEY with your actual API key
-        const apiKey = 'kGNyWQ9e1ASq0BGTVXtrqHcEpRaRIAcW';
-        const locationKey = '2089870'; // replace LOCATION_KEY with the actual location key
-        const apiUrl = `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`;
+        function getWeather() {
+            const apiKey = 'kGNyWQ9e1ASq0BGTVXtrqHcEpRaRIAcW';
+            const locationKey = '2089870';
+            const apiUrl = `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`;
 
-        fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          const weatherInfo = data[0];
-          const temperature = weatherInfo.Temperature.Imperial.Value;
-          const weatherText = weatherInfo.WeatherText;
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const weatherInfo = data[0];
+                    const temperature = weatherInfo.Temperature.Imperial.Value;
+                    const weatherText = weatherInfo.WeatherText;
 
-          const weatherInfoElement = document.getElementById('weather-info');
-          weatherInfoElement.textContent = `The temperature is ${temperature} degrees Fahrenheit and the weather is ${weatherText}.`;
-        })
-        .catch(error => console.error(error));
-      }
+                    const weatherInfoElement = document.getElementById('weather');
+                    if (weatherInfoElement !== null) {
+                        weatherInfoElement.textContent = `The temperature is ${temperature} degrees Fahrenheit and the weather is ${weatherText}.`;
+                    }
+                })
+                .catch(error => console.error(error));
+        }
+
     </script>
     <button type="button" id="redirectButton">Click me</button>
 
