@@ -22,5 +22,5 @@ function onSignIn(googleUser) {
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
   sessionStorage.setItem('isLoggedIn', true); // set a session storage variable to indicate that the user is logged in
-  window.location.href = 'Secondpage.html'; // redirect to a new page
+  window.location.href = "Secondpage.html"; // redirect to a new page
 }
