@@ -16,6 +16,24 @@
         <a href="Secondpage.html">Click here</a>
     </p>
 
+    <h1>COVID-19 Data</h1>
+    <div id="data"></div>
+    <script>
+      // Make HTTP request to API endpoint
+      fetch('https://covid-api.mmediagroup.fr/v1/cases?country=France')
+        .then(response => response.json())
+        .then(data => {
+          // Parse JSON response and display data on page
+          const dataDiv = document.getElementById('data');
+          dataDiv.innerHTML = `
+            <p><strong>Confirmed cases in France:</strong> ${data.All.confirmed}</p>
+            <p><strong>Recovered cases in France:</strong> ${data.All.recovered}</p>
+            <p><strong>Deaths in France:</strong> ${data.All.deaths}</p>
+          `;
+        })
+        .catch(error => console.error(error));
+    </script>
+
     <button type="button" id="redirectButton">Click me</button>
 
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
