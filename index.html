@@ -23,11 +23,16 @@
     <a href="#" onclick="signOut();">Sign out</a>
     <script>
         function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
+            if (typeof gapi !== 'undefined') {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            } else {
+                console.log('Google API library not loaded.');
+            }
         }
+
     </script>
 
 </body>
