@@ -3,7 +3,6 @@ window.onload = pageLoad;
 function pageLoad() {
 
   document.getElementById('redirectButton').onclick = dosomething;
-  console.log("I am Clicked");
   /*
   function onLoad() {
     gapi.load('auth2', function() {
@@ -20,7 +19,7 @@ onLoad();
 }
 
 function dosomething(){
-  window.location = "Secondpage.html";
+  console.log("I am Clicked");
 }
 
 function onSignIn(googleUser) {
