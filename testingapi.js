@@ -19,7 +19,7 @@ onLoad();
 }
 
 function dosomething(){
-  console.log("I am Clicked");
+  
 }
 
 function onSignIn(googleUser) {
