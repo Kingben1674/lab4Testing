@@ -1,6 +1,9 @@
 
 window.onload = pageLoad;
 function pageLoad() {
+
+  document.getElementById('redirectButton') = dosomething;
+  /*
   function onLoad() {
     gapi.load('auth2', function() {
         gapi.auth2.init().then(function() {
@@ -9,9 +12,14 @@ function pageLoad() {
             document.getElementById("user-name").innerHTML = "Hello, " + userName;
         });
     });
+    
 }
 onLoad(); 
+*/
+}
 
+function dosomething(){
+  window.location = "Secondpage.html";
 }
 
 function onSignIn(googleUser) {
