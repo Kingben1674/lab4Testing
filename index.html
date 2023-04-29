@@ -39,7 +39,7 @@
         function getWeather() {
             const apiKey = 'kGNyWQ9e1ASq0BGTVXtrqHcEpRaRIAcW';
             const locationKey = '2089870';
-            const apiUrl = `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=${apiKey}`;
+            const apiUrl = `https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=${apiKey}`;
 
             fetch(apiUrl)
                 .then(response => response.json())
@@ -70,7 +70,7 @@
                 }
             })
             .catch(error => console.error(error));
-        
+            
 
     </script>
     <button type="button" id="redirectButton">Click me</button>
