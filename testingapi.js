@@ -2,7 +2,7 @@
 window.onload = pageLoad;
 function pageLoad() {
 
-  document.getElementById('redirectButton') = dosomething;
+  document.getElementById('redirectButton').onclick = dosomething;
   /*
   function onLoad() {
     gapi.load('auth2', function() {
