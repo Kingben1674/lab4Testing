@@ -8,6 +8,19 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script type="text/javascript" src="testingapi.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#btn").click(function() {
+          var url = "https://disease.sh/v3/covid-19/all";
+          $.get(url, function(data) {
+            $("#result").text(JSON.stringify(data, null, 2));
+          });
+        });
+      });
+    </script>
+
 </head>
 
 <body>
@@ -16,23 +29,9 @@
         <a href="Secondpage.html">Click here</a>
     </p>
 
-    <h1>COVID-19 Data</h1>
-    <div id="data"></div>
-    <script>
-      // Make HTTP request to API endpoint
-      fetch('https://covid-api.mmediagroup.fr/v1/cases?country=France')
-        .then(response => response.json())
-        .then(data => {
-          // Parse JSON response and display data on page
-          const dataDiv = document.getElementById('data');
-          dataDiv.innerHTML = `
-            <p><strong>Confirmed cases in France:</strong> ${data.All.confirmed}</p>
-            <p><strong>Recovered cases in France:</strong> ${data.All.recovered}</p>
-            <p><strong>Deaths in France:</strong> ${data.All.deaths}</p>
-          `;
-        })
-        .catch(error => console.error(error));
-    </script>
+   <h1>COVID-19 API Example</h1>
+    <button id="btn">Get Global COVID-19 Totals</button>
+    <pre id="result"></pre>
 
     <button type="button" id="redirectButton">Click me</button>
 
