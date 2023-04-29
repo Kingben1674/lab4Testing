@@ -39,14 +39,14 @@
         function getWeather() {
             const apiKey = 'kGNyWQ9e1ASq0BGTVXtrqHcEpRaRIAcW';
             const locationKey = '2089870';
-            const apiUrl = `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`;
+            const apiUrl = `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=${apiKey}`;
 
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
                     const weatherInfo = data[0];
-                    const temperature = weatherInfo.Temperature.Imperial.Value;
-                    const weatherText = weatherInfo.WeatherText;
+                    const temperature1 = weatherInfo.Temperature.Imperial.Value;
+                    const weatherText1 = weatherInfo.WeatherText;
 
                     const weatherInfoElement = document.getElementById('weather');
                     if (weatherInfoElement !== null) {
@@ -54,6 +54,22 @@
                     }
                 })
                 .catch(error => console.error(error));
+        }
+
+        /*DONT TOUCH*/
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const weatherInfo = data[0];
+                const temperature = weatherInfo.Temperature.Imperial.Value;
+                const weatherText = weatherInfo.WeatherText;
+
+                const weatherInfoElement = document.getElementById('weather');
+                if (weatherInfoElement !== null) {
+                    weatherInfoElement.textContent = `The temperature is ${temperature} degrees Fahrenheit and the weather is ${weatherText}.`;
+                }
+            })
+            .catch(error => console.error(error));
         }
 
     </script>
