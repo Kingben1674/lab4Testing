@@ -1,9 +1,16 @@
 
 window.onload = pageLoad;
 function pageLoad() {
-  if(sessionStorage.getItem('isLoggedIn') == 'true'){
-    document.getElementById('nameInfo')=showName;
-  }  
+  function onLoad() {
+    gapi.load('auth2', function() {
+        gapi.auth2.init().then(function() {
+            var currentUser = gapi.auth2.getAuthInstance().currentUser.get();
+            var userName = currentUser.getBasicProfile().getName();
+            document.getElementById("user-name").innerHTML = "Hello, " + userName;
+        });
+    });
+}
+onLoad(); 
 
 }
 
