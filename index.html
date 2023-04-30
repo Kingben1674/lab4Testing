@@ -22,53 +22,64 @@
     <h1>Get Weather</h1>
     <button onclick="getWeather()">Get Weather</button>
     <p id="weather"></p>
-    <p id="time1"></p>
     <div class="allWeather">
         <div class="weatherBlock">
+            <p id="time1"></p>
             <img id="weatherimg1" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather1">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time2"></p>
             <img id="weatherimg2" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather2">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time3"></p>
             <img id="weatherimg3" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather3">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time4"></p>
             <img id="weatherimg4" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather4">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time5"></p>
             <img id="weatherimg5" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather5">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time6"></p>
             <img id="weatherimg6" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather6">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time7"></p>
             <img id="weatherimg7" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather7">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time8"></p>
             <img id="weatherimg8" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather8">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time9"></p>
             <img id="weatherimg9" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather9">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time10"></p>
             <img id="weatherimg10" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather10">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time11"></p>
             <img id="weatherimg11" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather11">It is sunny today</p>
         </div>
         <div class="weatherBlock">
+            <p id="time12"></p>
             <img id="weatherimg12" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
             <p id="weather12">It is sunny today</p>
         </div>
@@ -135,9 +146,10 @@
                 .then(data => {
 
                     for(var i =0;i<=12;i++){
-                        var timeEach = "time";
+                        var orginalTime = data[i].DateTime;
+                        var newTime = orginalTime.substring(10, 12);
                         var timeString = data[i].DateTime +" is the time";
-                        document.getElementById("time" + 1).innerHTML = timeString;
+                        document.getElementById("time" + (i + 1)).innerHTML = newTime;
                     }
 
                    // console.log(data[0].Temperature.Value);
