@@ -1,34 +1,61 @@
 
 window.onload = pageLoad;
 function pageLoad() {
+  const apiKey = 'yiVAx0WsTqB1wLo5s0WYChEHnfwK92Be';
+  const locationKey = '2089870';
+  const apiUrl = `https://cors-anywhere.herokuapp.com/https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=${apiKey}`;
 
-  document.getElementById('redirectButton').onclick = dosomething;
-  /*
-  function onLoad() {
-    gapi.load('auth2', function() {
-        gapi.auth2.init().then(function() {
-            var currentUser = gapi.auth2.getAuthInstance().currentUser.get();
-            var userName = currentUser.getBasicProfile().getName();
-            document.getElementById("user-name").innerHTML = "Hello, " + userName;
-        });
-    });
-    
-}
-onLoad(); 
-*/
+
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+
+
+
+          for (var i = 0; i < 12; i++) {
+
+              var time = data[i].DateTime;
+              var newTime = time.substring(11, 13);
+
+
+              // Convert military time to integer
+              var hours = parseInt(newTime);
+
+              // Determine AM or PM
+              var ampm = (hours < 12) ? "AM" : "PM";
+
+              // Convert hours to standard time
+              hours = (hours > 12) ? hours - 12 : hours;
+              hours = (hours == 0) ? 12 : hours;
+
+              // Return formatted time string
+              var finalTime = hours + " " + ampm;
+
+              document.getElementById("time" + (i + 1)).innerHTML = finalTime;
+
+              var weatherIconNum = data[i].WeatherIcon;
+              if (weatherIconNum < 10) {
+                  weatherIconNum = "0" + weatherIconNum;
+              }
+
+              var imageNum = "https://developer.accuweather.com/sites/default/files/" + weatherIconNum + "-s.png"
+
+              document.getElementById("weatherimg" + (i + 1)).setAttribute("src", imageNum);
+
+              document.getElementById("temp" + (i + 1)).innerHTML = data[i].Temperature.Value + "° F";
+
+              if (data[i].HasPrecipitation == true) {
+                  document.getElementById("weather" + (i + 1)).innerHTML = data[i].PrecipitationIntensity + " " + data[i].PrecipitationType;
+              } else if (data[i].HasPrecipitation == false) {
+                  document.getElementById("weather" + (i + 1)).innerHTML = data[i].IconPhrase;
+              } else {
+
+              }
+
+          }
+      })
+      .catch(error => console.error(error));
 }
 
-function dosomething(){
-  
 }
 
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-  sessionStorage.setItem('isLoggedIn', true); // set a session storage variable to indicate that the user is logged in
-  window.location = "https://kingben1674.github.io/lab4Testing/Secondpage.html"; // redirect to a new page
-}
