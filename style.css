@@ -1,3 +1,18 @@
 body{
-    background-color: blue;
+    background-color: white;
+}
+
+div.allWeather{
+    clear: both;
+}
+
+div.weatherBlock{
+    border: 3px black solid;
+    width: 80px;
+    float: left;
+    text-align: center;;
+}
+
+div.bottomStuff{
+    clear: both;
 }

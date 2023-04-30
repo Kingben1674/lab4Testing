@@ -22,10 +22,16 @@
     <h1>Get Weather</h1>
     <button onclick="getWeather()">Get Weather</button>
     <p id="weather"></p>
-    <img id="weatherimg" src="https://developer.accuweather.com/sites/default/files/01-s.png"/>
-    <p id="weather2">It is sunny today</p>
-    <img id="weatherimg2" src = "https://developer.accuweather.com/sites/default/files/01-s.png"/>
-    <p id="weather2">It is sunny today</p>
+    <div class="allWeather">
+        <div class="weatherBlock">
+            <img id="weatherimg" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
+            <p id="weather2">It is sunny today</p>
+        </div>
+        <div class="weatherBlock">
+            <img id="weatherimg2" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
+            <p id="weather2">It is sunny today</p>
+        </div>
+    </div>
 
     <script>
         function getWeather() {
@@ -77,10 +83,10 @@
             var image43 = "https://developer.accuweather.com/sites/default/files/43-s.png";
             var image44 = "https://developer.accuweather.com/sites/default/files/44-s.png";
 
-            const images = [image1, image2, image3, image4,image5, image6, image7, image8, image9, image10, image11, image12, image13,
-                            image14, image15, image16, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, 
-                            image28, image29, image30, image31, image32, image33, image34, image35, image36, image38, image39, image40, 
-                            image41, image42, image43, image44];
+            const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13,
+                image14, image15, image16, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27,
+                image28, image29, image30, image31, image32, image33, image34, image35, image36, image38, image39, image40,
+                image41, image42, image43, image44];
 
 
             fetch(apiUrl)
@@ -120,25 +126,29 @@
             */
 
     </script>
-    <button type="button" id="redirectButton">Click me</button>
 
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="bottomStuff">
+        <br>
+        <button type="button" id="redirectButton">Click me</button>
 
-    <a href="#" onclick="signOut();">Sign out</a>
-    <script>
-        function signOut() {
-            if (typeof gapi !== 'undefined') {
-                var auth2 = gapi.auth2.getAuthInstance();
-                auth2.signOut().then(function () {
-                    console.log('User signed out.');
-                });
-            } else {
-                console.log('Google API library not loaded.');
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+        <a href="#" onclick="signOut();">Sign out</a>
+        <script>
+            function signOut() {
+                if (typeof gapi !== 'undefined') {
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    auth2.signOut().then(function () {
+                        console.log('User signed out.');
+                    });
+                } else {
+                    console.log('Google API library not loaded.');
+                }
             }
-        }
 
-    </script>
+        </script>
 
+    </div>
 </body>
 
 </html>
