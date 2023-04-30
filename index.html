@@ -120,7 +120,7 @@
             var image44 = "https://developer.accuweather.com/sites/default/files/44-s.png";
 
             const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13,
-                image14, image15, image16, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27,
+                image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27,
                 image28, image29, image30, image31, image32, image33, image34, image35, image36, image38, image39, image40,
                 image41, image42, image43, image44];
 
@@ -130,18 +130,18 @@
                 .then(data => {
                     console.log(data[0].Temperature.Value);
                     var weatherIcon = data[0].WeatherIcon;
-                    document.getElementById("weatherimg1").setAttribute("src", images[data[0].WeatherIcon]);
-                    document.getElementById("weatherimg2").setAttribute("src", images[data[1].WeatherIcon]);
-                    document.getElementById("weatherimg3").setAttribute("src", images[data[2].WeatherIcon]);
-                    document.getElementById("weatherimg4").setAttribute("src", images[data[3].WeatherIcon]);
-                    document.getElementById("weatherimg5").setAttribute("src", images[data[4].WeatherIcon]);
-                    document.getElementById("weatherimg6").setAttribute("src", images[data[5].WeatherIcon]);
-                    document.getElementById("weatherimg7").setAttribute("src", images[data[6].WeatherIcon]);
-                    document.getElementById("weatherimg8").setAttribute("src", images[data[7].WeatherIcon]);
-                    document.getElementById("weatherimg9").setAttribute("src", images[data[8].WeatherIcon]);
-                    document.getElementById("weatherimg10").setAttribute("src", images[data[9].WeatherIcon]);
-                    document.getElementById("weatherimg11").setAttribute("src", images[data[10].WeatherIcon]);
-                    document.getElementById("weatherimg12").setAttribute("src", images[data[11].WeatherIcon]);
+                    document.getElementById("weatherimg1").setAttribute("src", images[data[0].WeatherIcon] -1 );
+                    document.getElementById("weatherimg2").setAttribute("src", images[data[1].WeatherIcon] -1);
+                    document.getElementById("weatherimg3").setAttribute("src", images[data[2].WeatherIcon] -1);
+                    document.getElementById("weatherimg4").setAttribute("src", images[data[3].WeatherIcon] -1);
+                    document.getElementById("weatherimg5").setAttribute("src", images[data[4].WeatherIcon] -1);
+                    document.getElementById("weatherimg6").setAttribute("src", images[data[5].WeatherIcon] -1);
+                    document.getElementById("weatherimg7").setAttribute("src", images[data[6].WeatherIcon] -1);
+                    document.getElementById("weatherimg8").setAttribute("src", images[data[7].WeatherIcon] -1);
+                    document.getElementById("weatherimg9").setAttribute("src", images[data[8].WeatherIcon] -1);
+                    document.getElementById("weatherimg10").setAttribute("src", images[data[9].WeatherIcon] -1);
+                    document.getElementById("weatherimg11").setAttribute("src", images[data[10].WeatherIcon] -1);
+                    document.getElementById("weatherimg12").setAttribute("src", images[data[11].WeatherIcon] -1);
                     /*
                     const weatherInfo = data[0];
                     const temperature1 = weatherInfo.Temperature.Imperial.Value;
