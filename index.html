@@ -157,7 +157,7 @@
                 .then(response => response.json())
                 .then(data => {
 
-                    
+
 
                     for (var i = 0; i < 12; i++) {
 
@@ -176,12 +176,12 @@
                         hours = (hours == 0) ? 12 : hours;
 
                         // Return formatted time string
-                        var finalTime=  hours + " " + ampm;
+                        var finalTime = hours + " " + ampm;
 
                         document.getElementById("time" + (i + 1)).innerHTML = finalTime;
 
                         var weatherIconNum = data[i].WeatherIcon;
-                        if(weatherIconNum < 10){
+                        if (weatherIconNum < 10) {
                             weatherIconNum = "0" + weatherIconNum;
                         }
 
@@ -189,85 +189,20 @@
 
                         document.getElementById("weatherimg" + (i + 1)).setAttribute("src", imageNum);
 
-                        
                         document.getElementById("temp" + (i + 1)).innerHTML = data[i].Temperature.Value + "° F";
-                        
-                        
-                        if(data[i].HasPrecipitation == true){
+
+                        if (data[i].HasPrecipitation == true) {
                             document.getElementById("weather" + (i + 1)).innerHTML = data[i].PrecipitationIntensity + " " + data[i].PrecipitationType;
-                        }else if(data[i].HasPrecipitation == false){
+                        } else if (data[i].HasPrecipitation == false) {
                             document.getElementById("weather" + (i + 1)).innerHTML = data[i].IconPhrase;
-                        }else{
+                        } else {
 
                         }
-                        
-                        
+
                     }
-
-
-/*
-                    // console.log(data[0].Temperature.Value);
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    weatherIcon1 = weatherIcon1 - 1;
-                    //console.log(weatherIcon1);
-                    //console.log(images[weatherIcon1]);
-                    var weatherIcon2 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-                    var weatherIcon1 = data[0].WeatherIcon;
-
-                    document.getElementById("weatherimg1").setAttribute("src", (images[data[0].WeatherIcon - 1]));
-                    document.getElementById("weatherimg2").setAttribute("src", (images[data[1].WeatherIcon - 1]));
-                    document.getElementById("weatherimg3").setAttribute("src", (images[data[2].WeatherIcon - 1]));
-                    document.getElementById("weatherimg4").setAttribute("src", (images[data[3].WeatherIcon - 1]));
-                    document.getElementById("weatherimg5").setAttribute("src", (images[data[4].WeatherIcon - 1]));
-                    document.getElementById("weatherimg6").setAttribute("src", (images[data[5].WeatherIcon - 1]));
-                    document.getElementById("weatherimg7").setAttribute("src", (images[data[6].WeatherIcon - 1]));
-                    document.getElementById("weatherimg8").setAttribute("src", (images[data[7].WeatherIcon - 1]));
-                    document.getElementById("weatherimg9").setAttribute("src", (images[data[8].WeatherIcon - 1]));
-                    document.getElementById("weatherimg10").setAttribute("src", (images[data[9].WeatherIcon - 1]));
-                    document.getElementById("weatherimg11").setAttribute("src", (images[data[10].WeatherIcon - 1]));
-                    document.getElementById("weatherimg12").setAttribute("src", (images[data[11].WeatherIcon - 1]));
-
-                    */
-
-                    //console.log(data[11].WeatherIcon);
-                    /*
-                    const weatherInfo = data[0];
-                    const temperature1 = weatherInfo.Temperature.Imperial.Value;
-                    const weatherText1 = weatherInfo.WeatherText;
-
-                    const weatherInfoElement = document.getElementById("weather');
-                    if (weatherInfoElement !== null) {
-                        weatherInfoElement.textContent = `The temperature is ${temperature} degrees Fahrenheit and the weather is ${weatherText}.`;
-                    }
-                    */
                 })
                 .catch(error => console.error(error));
         }
-
-        /*DONT TOUCH
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const weatherInfo = data[0];
-                const temperature = weatherInfo.Temperature.Imperial.Value;
-                const weatherText = weatherInfo.WeatherText;
-
-                const weatherInfoElement = document.getElementById('weather');
-                if (weatherInfoElement !== null) {
-                    weatherInfoElement.textContent = `The temperature is ${temperature} degrees Fahrenheit and the weather is ${weatherText}.`;
-                }
-            })
-            .catch(error => console.error(error));
-            */
 
     </script>
 
