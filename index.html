@@ -29,14 +29,63 @@
             const apiKey = 'kGNyWQ9e1ASq0BGTVXtrqHcEpRaRIAcW';
             const locationKey = '2089870';
             const apiUrl = `https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey}?apikey=${apiKey}`;
-            var image1 = 'https://developer.accuweather.com/sites/default/files/01-s.png'
+            var image1 = 'https://developer.accuweather.com/sites/default/files/01-s.png';
+            var image2 = 'https://developer.accuweather.com/sites/default/files/02-s.png';
+            var image3 = 'https://developer.accuweather.com/sites/default/files/03-s.png';
+            var image4 = 'https://developer.accuweather.com/sites/default/files/04-s.png';
+            var image5 = 'https://developer.accuweather.com/sites/default/files/05-s.png';
+            var image6 = 'https://developer.accuweather.com/sites/default/files/06-s.png';
+            var image7 = 'https://developer.accuweather.com/sites/default/files/07-s.png';
+            var image8 = 'https://developer.accuweather.com/sites/default/files/08-s.png';
+            var image9 = 'https://developer.accuweather.com/sites/default/files/09-s.png';
+            var image10 = 'https://developer.accuweather.com/sites/default/files/10-s.png';
+            var image11 = 'https://developer.accuweather.com/sites/default/files/11-s.png';
+            var image12 = 'https://developer.accuweather.com/sites/default/files/12-s.png';
+            var image13 = 'https://developer.accuweather.com/sites/default/files/13-s.png';
+            var image14 = 'https://developer.accuweather.com/sites/default/files/14-s.png';
+            var image15 = 'https://developer.accuweather.com/sites/default/files/15-s.png';
+            var image16 = 'https://developer.accuweather.com/sites/default/files/16-s.png';
+            var image17 = 'https://developer.accuweather.com/sites/default/files/17-s.png';
+            var image18 = 'https://developer.accuweather.com/sites/default/files/18-s.png';
+            var image19 = 'https://developer.accuweather.com/sites/default/files/19-s.png';
+            var image20 = 'https://developer.accuweather.com/sites/default/files/20-s.png';
+            var image21 = 'https://developer.accuweather.com/sites/default/files/21-s.png';
+            var image22 = 'https://developer.accuweather.com/sites/default/files/22-s.png';
+            var image23 = 'https://developer.accuweather.com/sites/default/files/23-s.png';
+            var image24 = 'https://developer.accuweather.com/sites/default/files/24-s.png';
+            var image25 = 'https://developer.accuweather.com/sites/default/files/25-s.png';
+            var image26 = 'https://developer.accuweather.com/sites/default/files/26-s.png';
+            var image27 = 'https://developer.accuweather.com/sites/default/files/27-s.png';
+            var image28 = 'https://developer.accuweather.com/sites/default/files/28-s.png';
+            var image29 = 'https://developer.accuweather.com/sites/default/files/29-s.png';
+            var image30 = 'https://developer.accuweather.com/sites/default/files/30-s.png';
+            var image31 = 'https://developer.accuweather.com/sites/default/files/31-s.png';
+            var image32 = 'https://developer.accuweather.com/sites/default/files/32-s.png';
+            var image33 = 'https://developer.accuweather.com/sites/default/files/33-s.png';
+            var image34 = 'https://developer.accuweather.com/sites/default/files/34-s.png';
+            var image35 = 'https://developer.accuweather.com/sites/default/files/35-s.png';
+            var image36 = 'https://developer.accuweather.com/sites/default/files/36-s.png';
+            var image37 = 'https://developer.accuweather.com/sites/default/files/37-s.png';
+            var image38 = 'https://developer.accuweather.com/sites/default/files/38-s.png';
+            var image39 = 'https://developer.accuweather.com/sites/default/files/39-s.png';
+            var image40 = 'https://developer.accuweather.com/sites/default/files/40-s.png';
+            var image41 = 'https://developer.accuweather.com/sites/default/files/41-s.png';
+            var image42 = 'https://developer.accuweather.com/sites/default/files/42-s.png';
+            var image43 = 'https://developer.accuweather.com/sites/default/files/43-s.png';
+            var image44 = 'https://developer.accuweather.com/sites/default/files/44-s.png';
+
+            const images = {image1, image2, image3, image4,image5, image6, image7, image8, image9, image10, image11, image12, image13,
+                            image14, image15, image16, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, 
+                            image28, image29, image30, image31, image32, image33, image34, image35, image36, image38, image39, image40, 
+                            image41, image42, image43, image44};
+
 
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data[0].Temperature.Value);
                     var weatherIcon = data[0].WeatherIcon;
-                    document.getElementById('weatherimg').setAttribute("src", image1);
+                    document.getElementById('weatherimg').setAttribute("src", images[data[0].WeatherIcon]);
                     /*
                     const weatherInfo = data[0];
                     const temperature1 = weatherInfo.Temperature.Imperial.Value;
