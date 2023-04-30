@@ -192,12 +192,7 @@
 
                         }
                         
-                        
-                    }
-
-
-
-                    // console.log(data[0].Temperature.Value);
+                        // console.log(data[0].Temperature.Value);
                     var weatherIcon1 = data[0].WeatherIcon;
                     weatherIcon1 = weatherIcon1 - 1;
                     //console.log(weatherIcon1);
@@ -226,6 +221,11 @@
                     document.getElementById("weatherimg10").setAttribute("src", (images[data[9].WeatherIcon - 1]));
                     document.getElementById("weatherimg11").setAttribute("src", (images[data[10].WeatherIcon - 1]));
                     document.getElementById("weatherimg12").setAttribute("src", (images[data[11].WeatherIcon - 1]));
+                    }
+
+
+
+                    
 
                     //console.log(data[11].WeatherIcon);
                     /*
