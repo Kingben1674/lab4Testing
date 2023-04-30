@@ -22,7 +22,10 @@
     <h1>Get Weather</h1>
     <button onclick="getWeather()">Get Weather</button>
     <p id="weather"></p>
-    <img id="weatherimg" src=""/>
+    <img id="weatherimg" src="https://developer.accuweather.com/sites/default/files/01-s.png"/>
+    <p id="weather2">It is sunny today</p>
+    <img id="weatherimg2" src = "https://developer.accuweather.com/sites/default/files/01-s.png"/>
+    <p id="weather2">It is sunny today</p>
 
     <script>
         function getWeather() {
@@ -85,7 +88,6 @@
                 .then(data => {
                     console.log(data[0].Temperature.Value);
                     var weatherIcon = data[0].WeatherIcon;
-                    console.log(images[17]);
                     document.getElementById("weatherimg").setAttribute("src", images[data[0].WeatherIcon]);
                     /*
                     const weatherInfo = data[0];
