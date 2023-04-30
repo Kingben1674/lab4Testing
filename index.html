@@ -133,8 +133,21 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log(data[0].Temperature.Value);
-                    var weatherIcon = data[0].WeatherIcon;
-                    document.getElementById("weatherimg1").setAttribute("src", (images[data[0].WeatherIcon])-1);
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    weatherIcon1--;
+                    var weatherIcon2 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+                    var weatherIcon1 = data[0].WeatherIcon;
+
+                    document.getElementById("weatherimg1").setAttribute("src", (images[weatherIcon1]));
                     document.getElementById("weatherimg2").setAttribute("src", (images[data[1].WeatherIcon]-1));
                     document.getElementById("weatherimg3").setAttribute("src", (images[data[2].WeatherIcon]-1));
                     document.getElementById("weatherimg4").setAttribute("src", (images[data[3].WeatherIcon]-1));
