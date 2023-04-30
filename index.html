@@ -134,7 +134,7 @@
                 .then(response => response.json())
                 .then(data => {
 
-                    for(var i =0;i<12;i++){
+                    for(var i =0;i<=12;i++){
                         var timeEach = "time";
                         var timeString = data[i].DateTime +" is the time";
                         document.getElementById("time" + 1).innerHTML = timeString;
