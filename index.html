@@ -180,7 +180,7 @@
                         if(data[i].HasPrecipitation == true){
                             document.getElementById("weather" + (i + 1)).innerHTML = data[i].PrecipitationIntensity + " " + data[i].PrecipitationType;
                         }else if(data[i].HasPrecipitation == false){
-                            document.getElementById("weather" + (i + 1)).innerHTML = data[i].WeatherPhrase;
+                            document.getElementById("weather" + (i + 1)).innerHTML = data[i].IconPhrase;
                         }
                     }
 
