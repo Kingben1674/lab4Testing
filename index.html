@@ -132,10 +132,11 @@
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data[0].Temperature.Value);
+                   // console.log(data[0].Temperature.Value);
                     var weatherIcon1 = data[0].WeatherIcon;
                     weatherIcon1 = weatherIcon1 -1;
                     console.log(weatherIcon1);
+                    console.log(images[18]);
                     var weatherIcon2 = data[0].WeatherIcon;
                     var weatherIcon1 = data[0].WeatherIcon;
                     var weatherIcon1 = data[0].WeatherIcon;
@@ -160,7 +161,7 @@
                     document.getElementById("weatherimg10").setAttribute("src", (images[data[9].WeatherIcon]-1));
                     document.getElementById("weatherimg11").setAttribute("src", (images[data[10].WeatherIcon]-1));
                     document.getElementById("weatherimg12").setAttribute("src", (images[data[11].WeatherIcon]-1));
-                    console.log(data[11].WeatherIcon);
+                    //console.log(data[11].WeatherIcon);
                     /*
                     const weatherInfo = data[0];
                     const temperature1 = weatherInfo.Temperature.Imperial.Value;
