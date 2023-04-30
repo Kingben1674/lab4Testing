@@ -9,6 +9,7 @@ div.allWeather{
 div.weatherBlock{
     border: 3px black solid;
     width: 80px;
+    height: 200px;
     float: left;
     text-align: center;;
 }
