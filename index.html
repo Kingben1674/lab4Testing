@@ -44,7 +44,7 @@
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
+                    console.log(data[0].Temperature.Value);
                     /*
                     const weatherInfo = data[0];
                     const temperature1 = weatherInfo.Temperature.Imperial.Value;
