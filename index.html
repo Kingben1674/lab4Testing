@@ -44,6 +44,8 @@
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data);
+                    /*
                     const weatherInfo = data[0];
                     const temperature1 = weatherInfo.Temperature.Imperial.Value;
                     const weatherText1 = weatherInfo.WeatherText;
@@ -52,6 +54,7 @@
                     if (weatherInfoElement !== null) {
                         weatherInfoElement.textContent = `The temperature is ${temperature} degrees Fahrenheit and the weather is ${weatherText}.`;
                     }
+                    */
                 })
                 .catch(error => console.error(error));
         }
