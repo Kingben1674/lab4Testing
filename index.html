@@ -160,8 +160,7 @@
                     
 
                     for (var i = 0; i <= 12; i++) {
-                        var orginalTime = data[i].DateTime;
-                        var newTime = orginalTime.substring(11, 13);
+                        var newTime = data[i].DateTime.substring(11, 13);
 
 
                         // Convert military time to integer
