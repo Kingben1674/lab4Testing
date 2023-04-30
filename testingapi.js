@@ -57,5 +57,3 @@ function pageLoad() {
       .catch(error => console.error(error));
 }
 
-}
-
