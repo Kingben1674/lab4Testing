@@ -22,6 +22,7 @@
     <h1>Get Weather</h1>
     <button onclick="getWeather()">Get Weather</button>
     <p id="weather"></p>
+    <p id="time"></p>
     <div class="allWeather">
         <div class="weatherBlock">
             <img id="weatherimg1" src="https://developer.accuweather.com/sites/default/files/01-s.png" />
@@ -132,6 +133,12 @@
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
+
+                    for(var i =0;i<12;i++){
+                        var timeEach = "time";
+                        document.getElementById("time" + 1).textContent = data[i].DateTime;
+                    }
+
                    // console.log(data[0].Temperature.Value);
                     var weatherIcon1 = data[0].WeatherIcon;
                     weatherIcon1 = weatherIcon1 -1;
@@ -161,6 +168,7 @@
                     document.getElementById("weatherimg10").setAttribute("src", (images[data[9].WeatherIcon - 1]));
                     document.getElementById("weatherimg11").setAttribute("src", (images[data[10].WeatherIcon - 1]));
                     document.getElementById("weatherimg12").setAttribute("src", (images[data[11].WeatherIcon - 1]));
+
                     //console.log(data[11].WeatherIcon);
                     /*
                     const weatherInfo = data[0];
