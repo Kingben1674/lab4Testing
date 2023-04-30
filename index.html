@@ -160,6 +160,8 @@
                     
 
                     for (var i = 0; i <= 12; i++) {
+                        /*
+
                         var newTime = data[i].DateTime.substring(11, 13);
 
 
@@ -177,6 +179,9 @@
                         var finalTime=  hours + " " + ampm;
 
                         document.getElementById("time" + (i + 1)).innerHTML = finalTime;
+
+                        */
+
                         document.getElementById("temp" + (i + 1)).innerHTML = data[i].Temperature.Value + "° F";
                         if(data[i].HasPrecipitation == true){
                             document.getElementById("weather" + (i + 1)).innerHTML = data[i].PrecipitationIntensity + " " + data[i].PrecipitationType;
